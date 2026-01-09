@@ -41,6 +41,19 @@ This repo provides a **clear, practical reference implementation** for those fea
   - Next.js (App Router)
   - Tailwind CSS
   - Solana Devnet preconfigured
+ 
+  - ## Gasless Transactions Note
+
+This template demonstrates how to integrate Lazorkit Paymaster
+for gasless transactions.
+
+To enable real gas sponsorship:
+- Create a Lazorkit project
+- Configure a Paymaster URL
+- Add it to `.env.local`
+
+For security reasons, no Paymaster key is included in this repo.
+
 
 ---
 
