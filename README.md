@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lazorkit Solana Starter Template
 
-## Getting Started
+A high-quality, minimal **developer starter template** demonstrating how to integrate the **Lazorkit SDK** for **passkey-based smart wallets** and **gasless transactions** on **Solana Devnet**.
 
-First, run the development server:
+This repo is designed to help Solana developers get started with **seedless onboarding** and **gas-abstracted UX** in minutes — without wallet extensions or seed phrases.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Why This Project Exists
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Even in 2025, most Solana dApps still require:
+- Installing a browser wallet
+- Managing seed phrases
+- Holding SOL just to get started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Solana now supports **passkey-based authentication**, and **Lazorkit** enables developers to build:
+- Smart wallets secured by biometrics
+- Gasless transactions via paymasters
+- Seamless onboarding for non-crypto users
 
-## Learn More
+This repo provides a **clear, practical reference implementation** for those features.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Passkey Authentication**
+  - No seed phrases
+  - No wallet extensions
+  - Uses FaceID / TouchID / Windows Hello (WebAuthn)
 
-## Deploy on Vercel
+- **Gasless Transactions**
+  - Transaction fees sponsored via Lazorkit Paymaster
+  - Users can transact with **zero SOL balance**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Smart Wallet Abstraction**
+  - Programmatic wallet accounts
+  - Extensible for batching, automation, and permissions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Modern Stack**
+  - Next.js (App Router)
+  - Tailwind CSS
+  - Solana Devnet preconfigured
+
+---
+
+## 📁 Project Structure
+
+```txt
+src/
+├─ app/                 # Next.js App Router pages
+├─ components/          # UI + interaction components
+├─ lib/                 # Lazorkit + Solana helpers
+├─ contexts/            # Wallet / SDK providers
+docs/
+├─ passkey-tutorial.md
+├─ gasless-transfer-tutorial.md
