@@ -13,10 +13,16 @@ interface ProviderProps {
  * It configures the SDK to use Solana Devnet and sets up the Paymaster for gasless transactions.
  */
 export function LazorkitProvider({ children }: ProviderProps) {
+    // Determine the base URL dynamically to ensure compatibility with Vercel and Localhost.
+    const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000';
+    const redirectUrl = `${baseUrl}/callback`;
+
     return (
         <BaseLazorkitProvider
             rpcUrl={SOLANA_DEVNET_RPC}
             portalUrl={LAZORKIT_PORTAL_URL}
+            // @ts-ignore - redirectUrl is required for v2 SDK deployments
+            redirectUrl={redirectUrl}
             // The paymaster configuration is what enables gasless transactions.
             // Lazorkit will use this URL to sponsor transaction fees for users.
             paymasterConfig={{
